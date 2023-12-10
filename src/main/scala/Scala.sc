@@ -5,20 +5,20 @@ list.head
 list.tail
 
 
-def buscar[T](l: List[T], fx: (T, T) => Boolean ): Option[T] = l match {
+def searchFor[T](l: List[T], fx: (T, T) => Boolean ): Option[T] = l match {
   case Nil => None
   case head :: Nil => Some(head)
-  case head :: _ => buscar(l.tail, fx).map(value => if(fx(head , value)) head else value)
+  case head :: _ => searchFor(l.tail, fx).map(value => if(fx(head , value)) head else value)
 }
 
-def maximo[T](l: List[T])(implicit  order: Ordering[T]): Option[T] = buscar(l, order.gt(_,_) )
-def minimo[T](l: List[T])(implicit  order: Ordering[T]): Option[T] = buscar(l, order.lt(_,_) )
+def max[T](l: List[T])(implicit  order: Ordering[T]): Option[T] = searchFor(l, order.gt )
+def min[T](l: List[T])(implicit  order: Ordering[T]): Option[T] = searchFor(l, order.lt )
 
 
-maximo(list)
-minimo(list)
+max(list)
+min(list)
 
 val names = "Pepe" :: "Titina" :: "Juan" :: Nil
 
-maximo(names)
+max(names)
 
