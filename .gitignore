@@ -87,3 +87,4 @@ fabric.properties
 .idea
 .bsp/sbt.json
 target/
+project/
