@@ -1,5 +1,8 @@
 package part2oop
 
+import java.time.Instant
+import java.time.temporal.ChronoUnit
+
 object MethodNotations extends App{
 
   class Person(val name: String, favoriteMovie: String){
@@ -23,6 +26,7 @@ object MethodNotations extends App{
   println(1+2)
   println(1.*(2))
   //All operators are methods
+  println(Instant.now.truncatedTo(ChronoUnit.SECONDS))
 
   //Prefix notation
   val x = -1 //equivalent with 1.unary_ -
