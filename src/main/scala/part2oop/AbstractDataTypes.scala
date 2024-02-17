@@ -30,6 +30,7 @@ object AbstractDataTypes extends App {
     override def eat: Unit = "nom nom croc"
 
     override def eat(animal: Animal): Unit = println(s"I'm a croc and I'm eating ${animal.creatureType}")
+    val x = Seq
   }
 
   val dog = new Dog
