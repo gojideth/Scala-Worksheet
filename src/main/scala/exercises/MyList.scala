@@ -15,7 +15,7 @@ abstract class MyList {
 
 }
 
-object Empty extends MyList {
+private object Empty extends MyList {
   def head: Int = throw new NoSuchElementException("pai no hay elementos")
 
   def tail: MyList = throw new NoSuchElementException("pai no hay elementos")
@@ -27,7 +27,7 @@ object Empty extends MyList {
   override def printElements: String = ""
 }
 
-class Cons(h: Int, t: MyList) extends MyList{
+private class Cons(h: Int, t: MyList) extends MyList{
 
   def head: Int = h
 
@@ -37,7 +37,7 @@ class Cons(h: Int, t: MyList) extends MyList{
 
   def add(element: Int): MyList = new Cons(element, this)
 
-  override def printElements: String = if(tail.isEmpty){
+  override def printElements: String = if(t.isEmpty){
     this.h + ""
   }else {
     h + " " + t.printElements
@@ -46,7 +46,7 @@ class Cons(h: Int, t: MyList) extends MyList{
 
 object ListTest extends App{
   private val myList = new Cons(1, Empty)
-  private val myList2 = new Cons(1, new Cons(2, new Cons(3,Empty)))
+  private val myList2 = new Cons(1, new Cons(2, Empty))
   println(myList.head)
   println(myList2.tail.head)
   println(myList.add(4).head)
