@@ -36,7 +36,7 @@ object Generics extends App{
 
   // animalList.add(new Dog) ??? HARD QUESTION => We return a list of Animals.
   //if we add a dog to the cat list which is a animal list, then it'll be an animal list
-  
+
   //2. NO, list[Animal] != list[Cat]
   class InvariantList[A]
   // val invariantAnimalList: InvariantList[Animal] = new InvariantList[Cat] //If I specify Animal then I need to put ANIMAL, not anything else
